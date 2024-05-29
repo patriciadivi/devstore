@@ -1,19 +1,19 @@
-import { api } from '@/data/api'
+import { apiFetch } from '@/data/api'
 import { Product } from '@/data/types/products'
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
 async function getFeaturedProducts(): Promise<Product[]> {
-  const response = await api('/products/featured', {
+  const response = await apiFetch('/products', {
     next: {
       revalidate: 60 * 60, // 1 hour
     },
   })
+  const products: Product[] = await response.json()
+  const featuredProducts = products.filter((product) => product.featured)
 
-  const products = await response.json()
-
-  return products
+  return featuredProducts
 }
 
 export const metadata: Metadata = {
@@ -22,6 +22,8 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const [highLightedProduct, ...otherProducts] = await getFeaturedProducts()
+
+  // console.log('---->', highLightedProduct)
 
   return (
     <div className="grid max-h-[710px] grid-cols-9 grid-rows-6 gap-6">
