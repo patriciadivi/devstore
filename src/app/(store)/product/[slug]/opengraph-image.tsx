@@ -1,4 +1,4 @@
-import { api } from '@/data/api'
+import { apiFetch } from '@/data/api'
 import { Product } from '@/data/types/products'
 import { env } from '@/env'
 import colors from 'tailwindcss/colors'
@@ -13,14 +13,19 @@ export const size = {
 export const contentType = 'image/png'
 
 async function getProduct(slug: string): Promise<Product> {
-  const response = await api(`/products/${slug}`, {
+  const response = await apiFetch(`/products`, {
     next: {
       revalidate: 60 * 60, // 1 hour
     },
   })
 
-  const product = await response.json()
+  const products: Product[] = await response.json()
 
+  const product = products.find((product) => product.slug === slug)
+
+  if (!product) {
+    throw new Error('No products found')
+  }
   return product
 }
 
