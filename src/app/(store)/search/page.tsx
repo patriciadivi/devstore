@@ -1,4 +1,4 @@
-import { api } from '@/data/api'
+import { apiFetch } from '@/data/api'
 import { Product } from '@/data/types/products'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -11,15 +11,27 @@ interface SearchProps {
 }
 
 async function searchProducts(query: string): Promise<Product[]> {
-  const response = await api(`/products/search?q=${query}`, {
+  console.log('query -->', query)
+  // const response = await apiFetch(`/products/search?q=${query}`, {
+  //   next: {
+  //     revalidate: 60 * 60, // 1 hour
+  //   },
+  // })
+  const response = await apiFetch(`/products`, {
     next: {
       revalidate: 60 * 60, // 1 hour
     },
   })
 
-  const products = await response.json()
+  const products: Product[] = await response.json()
 
-  return products
+  console.log('--->', products)
+
+  const productsFilter = products.filter((product) => {
+    return product.title.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+  })
+
+  return productsFilter
 }
 
 export default async function Search({ searchParams }: SearchProps) {
