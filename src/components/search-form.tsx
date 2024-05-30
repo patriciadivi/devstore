@@ -32,7 +32,7 @@ export function SearchForm() {
   }
 
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <form
         onSubmit={handleSearch}
         className="flex w-[320px] items-center gap-3 rounded-full bg-zinc-900 px-5 py-3 ring-zinc-700"
