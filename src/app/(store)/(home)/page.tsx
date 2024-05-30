@@ -27,7 +27,7 @@ export default async function Home() {
   // console.log('---->', highLightedProduct)
 
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <div className="grid max-h-[710px] grid-cols-9 grid-rows-6 gap-6">
         <Link
           href={`/product/${highLightedProduct.slug}`}

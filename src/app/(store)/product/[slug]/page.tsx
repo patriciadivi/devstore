@@ -56,7 +56,7 @@ export default async function ProductPage({ params }: ProductProps) {
   const product = await getProduct(params.slug)
 
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <div className="relative grid max-h-[860px] grid-cols-3">
         <div className="col-span-2 overflow-hidden">
           <Image

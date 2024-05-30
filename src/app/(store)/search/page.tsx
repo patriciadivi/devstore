@@ -46,7 +46,7 @@ export default async function Search({ searchParams }: SearchProps) {
   const products = await searchProducts(query)
 
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <div className="flex flex-col gap-4">
         <p className="text-sm">
           Resultados para:{' '}
