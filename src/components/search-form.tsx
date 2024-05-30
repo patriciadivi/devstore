@@ -4,8 +4,16 @@ import { Search } from 'lucide-react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { FormEvent, Suspense } from 'react'
 
+// import { useLocation } from 'react-router-dom'
+// const useQuery = () => {
+//   return new URLSearchParams(useLocation().search);
+// };
+
 export function SearchForm() {
+  // const query = useQuery();
+  // console.log('query -->', query)
   const router = useRouter()
+
   const searchParams = useSearchParams()
 
   const query = searchParams.get('q')
