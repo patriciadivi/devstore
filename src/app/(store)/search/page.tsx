@@ -38,6 +38,7 @@ async function searchProducts(query: string): Promise<Product[]> {
 export default async function Search({ searchParams }: SearchProps) {
   // await new Promise((resolve) => setTimeout(resolve, 2000))
   const { q: query } = searchParams
+  console.log('--->', query)
 
   if (!query) {
     redirect('/')
