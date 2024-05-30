@@ -10,8 +10,6 @@ import { FormEvent, Suspense } from 'react'
 // };
 
 export function SearchForm() {
-  // const query = useQuery();
-  // console.log('query -->', query)
   const router = useRouter()
 
   const searchParams = useSearchParams()
