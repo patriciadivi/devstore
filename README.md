@@ -7,6 +7,16 @@
   <h4 align="center"> 
 	🚧  Devstore ♻️ Em Desenvolvimento 🚀 🚧
   </h4>
+
+  <span align="center"> 
+	🌐 Visite Devstore 🔛 
+    <a href="https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits">
+      Devstore 🚀
+    </a>
+  </span>
+  </br>
+  </br>
+
   <p align="center">
    • <a href="#-sobre-o-projeto">Sobre o projeto</a> •
    <a href="#-projeto-em-sua-maquina">Projeto em sua maquina</a> •
@@ -18,23 +28,11 @@
 
  ## 💻 Sobre o projeto
   <h3>
-  O projeto é uma plataforma de compras online, seu intuito é</br>
-  trazer a praticidade na compra de suas roupas favoritas,</br>
+  O projeto é uma plataforma de compras online, </br> seu intuito é
+  trazer a praticidade na compra </br> de suas roupas favoritas,</br>
   tornando a vida dos usuários mais agradável.
-
-  </br>
-  
-  
-  </br>
-  
-  <details align="left">
-    <summary>  Clique aqui para saber mais </summary>
-      <video controls autoplay loop muted markdown="1" src="https://github.com/patriciadivi/PDiviDeliveryApp/assets/38478917/3d46763b-f895-4b86-ac17-75788d5e537c" alt="Imagem representativa da aplicação" >
-      </video>
-  </details>
-
-  </br>
  
+  </br>
   </br>
   
   
